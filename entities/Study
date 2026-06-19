@@ -1,0 +1,75 @@
+{
+  "name": "Study",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Study title"
+    },
+    "description": {
+      "type": "string",
+      "description": "Study description"
+    },
+    "instructions": {
+      "type": "string",
+      "description": "Instructions for participants"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "open",
+        "closed",
+        "hybrid"
+      ],
+      "description": "Card sorting type"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "active",
+        "closed"
+      ],
+      "default": "draft",
+      "description": "Study status"
+    },
+    "cards": {
+      "type": "array",
+      "description": "Cards for the study",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "categories": {
+      "type": "array",
+      "description": "Predefined categories (for closed/hybrid)",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "share_id": {
+      "type": "string",
+      "description": "Unique share identifier for participant URL"
+    }
+  },
+  "required": [
+    "title",
+    "type"
+  ]
+}

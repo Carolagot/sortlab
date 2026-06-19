@@ -1,0 +1,45 @@
+{
+  "name": "ParticipantResponse",
+  "type": "object",
+  "properties": {
+    "study_id": {
+      "type": "string",
+      "description": "Reference to the study"
+    },
+    "groups": {
+      "type": "array",
+      "description": "Array of category groups with their cards",
+      "items": {
+        "type": "object",
+        "properties": {
+          "category_name": {
+            "type": "string"
+          },
+          "card_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "participant_name": {
+      "type": "string",
+      "description": "Optional participant identifier"
+    },
+    "comment": {
+      "type": "string",
+      "description": "Optional comment or suggestion from the participant"
+    },
+    "completed": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether the response is complete"
+    }
+  },
+  "required": [
+    "study_id",
+    "groups"
+  ]
+}
